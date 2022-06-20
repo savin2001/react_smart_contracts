@@ -1,26 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from "react";
+import PrimaryNavbar from "./components/PrimaryNavbar";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [hasError, setHasError] = useState(false);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            setIsLoading(true);
+            setHasError(false);
+            try {
+                const res = await fetch(
+                    "https://hn.algolia.com/api/v1/search?query=react"
+                );
+                const json = await res.json();
+                setData(json.hits);
+            } catch (error) {
+                setHasError(true);
+            }
+            setIsLoading(false);
+        };
+        fetchData();
+    }, [setData]);
+
+    return (
+        <div className="App">
+            <div className="dark:bg-gray-900 min-h-screen">
+                <PrimaryNavbar/>
+            </div>
+        </div>
+    );
 }
 
 export default App;
