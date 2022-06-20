@@ -1,4 +1,9 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./common_pages/Home";
+import Login from "./common_pages/Login";
+import Page404 from "./common_pages/Page404";
+import Register from "./common_pages/Register";
 import PrimaryNavbar from "./components/PrimaryNavbar";
 
 function App() {
@@ -26,9 +31,18 @@ function App() {
 
     return (
         <div className="App">
-            <div className="dark:bg-gray-900 min-h-screen">
-                <PrimaryNavbar/>
-            </div>
+            <BrowserRouter>
+                <div className="dark:bg-gray-900 min-h-screen">
+                    <PrimaryNavbar />
+                    <Routes>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/home" element={<Home />} />
+                        <Route path="/login" element={<Login />} />
+                        <Route path="/register" element={<Register />} />
+                        <Route path="*" element={<Page404 />} />
+                    </Routes>
+                </div>
+            </BrowserRouter>
         </div>
     );
 }

@@ -1,19 +1,20 @@
 /* This example requires Tailwind CSS v2.0+ */
 import { Fragment } from "react";
+import { Link } from "react-router-dom";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import {
     AiOutlineShoppingCart,
     AiOutlineMenu,
     AiOutlineClose,
+    AiOutlineHeart,
+    AiOutlineSearch,
 } from "react-icons/ai";
 
 import ThemeToggle from "./ThemeToggle";
 
 const navigation = [
-    { name: "Dashboard", href: "#", current: true },
-    { name: "Team", href: "#", current: false },
-    { name: "Projects", href: "#", current: false },
-    { name: "Calendar", href: "#", current: false },
+    { name: "Sign up", href: "/register", current: true },
+    { name: "Sign in", href: "/login", current: false },
 ];
 
 function classNames(...classes) {
@@ -22,7 +23,7 @@ function classNames(...classes) {
 
 export default function Example() {
     return (
-        <Disclosure as="nav" className="bg-gray-400 dark:bg-gray-900">
+        <Disclosure as="nav" className="bg-gray-300 dark:bg-gray-900 ">
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
@@ -48,19 +49,23 @@ export default function Example() {
                             </div>
                             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                                 <div className="flex-shrink-0 flex items-center">
-                                    <img
-                                        className="block lg:hidden h-8 w-auto"
-                                        src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
-                                        alt="Workflow"
-                                    />
-                                    <h2 className="text-black dark:text-white">Iko Legit</h2>
+                                    <Link to={"/home" | ""}>
+                                        <img
+                                            className="block lg:hidden h-8 w-auto"
+                                            src="https://avatars.dicebear.com/api/identicon/savin.svg"
+                                            alt="Workflow"
+                                        />
+                                        <h2 className="text-black dark:text-white">
+                                            Iko Legit
+                                        </h2>
+                                    </Link>
                                 </div>
                                 <div className="hidden sm:block sm:ml-6">
                                     <div className="flex space-x-4">
                                         {navigation.map((item) => (
-                                            <a
+                                            <Link
                                                 key={item.name}
-                                                href={item.href}
+                                                to={item.href}
                                                 className={classNames(
                                                     item.current
                                                         ? "bg-gray-900 text-white dark:text-white"
@@ -74,26 +79,44 @@ export default function Example() {
                                                 }
                                             >
                                                 {item.name}
-                                            </a>
+                                            </Link>
                                         ))}
                                     </div>
                                 </div>
                             </div>
                             <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+                                <div className="bg-gray-300 flex dark:bg-gray-900 p-1 mx-2 rounded-full text-black dark:text-white hover:text-white ">
+                                    <span className="sr-only">View cart</span>
+                                    <input
+                                        type="search"
+                                        id="default-search"
+                                        className="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-white-500"
+                                        placeholder="I'm looking for..."
+                                        required=""
+                                    />
+                                </div>
                                 <button
                                     type="button"
-                                    className="bg-gray-800 p-1 rounded-full text-black dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className="bg-gray-300 dark:bg-gray-900 p-1 mx-2 rounded-full text-black dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
-                                    <span className="sr-only">
-                                        View notifications
-                                    </span>
+                                    <span className="sr-only">View cart</span>
                                     <AiOutlineShoppingCart
                                         className="h-6 w-6"
                                         aria-hidden="true"
                                     />
                                 </button>
-                                <ThemeToggle />
-
+                                <button
+                                    type="button"
+                                    className="bg-gray-300 dark:bg-gray-900 p-1 mx-2 rounded-full text-black dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                >
+                                    <AiOutlineHeart className="h-6 w-6" />
+                                </button>
+                                <button
+                                    type="button"
+                                    className="bg-gray-300 dark:bg-gray-900 p-1 mx-2 rounded-full text-black dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                >
+                                    <ThemeToggle className="h-6 w-6" />
+                                </button>
                                 {/* Profile dropdown */}
                                 <Menu as="div" className="ml-3 relative">
                                     <div>
@@ -103,7 +126,7 @@ export default function Example() {
                                             </span>
                                             <img
                                                 className="h-8 w-8 rounded-full"
-                                                src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                                src="https://avatars.dicebear.com/api/adventurer/john.svg"
                                                 alt=""
                                             />
                                         </Menu.Button>
@@ -117,7 +140,7 @@ export default function Example() {
                                         leaveFrom="transform opacity-100 scale-100"
                                         leaveTo="transform opacity-0 scale-95"
                                     >
-                                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none">
+                                        <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white text-white dark:bg-gray-700 dark:text-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                             <Menu.Item>
                                                 {({ active }) => (
                                                     <a
@@ -126,7 +149,7 @@ export default function Example() {
                                                             active
                                                                 ? "bg-gray-100"
                                                                 : "",
-                                                            "block px-4 py-2 text-sm text-gray-700"
+                                                            "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
                                                         )}
                                                     >
                                                         Your Profile
@@ -141,7 +164,7 @@ export default function Example() {
                                                             active
                                                                 ? "bg-gray-100"
                                                                 : "",
-                                                            "block px-4 py-2 text-sm text-gray-700"
+                                                            "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
                                                         )}
                                                     >
                                                         Settings
@@ -156,7 +179,7 @@ export default function Example() {
                                                             active
                                                                 ? "bg-gray-100"
                                                                 : "",
-                                                            "block px-4 py-2 text-sm text-gray-700"
+                                                            "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
                                                         )}
                                                     >
                                                         Sign out
