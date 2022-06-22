@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./common_pages/Home";
 import Login from "./common_pages/Login";
 import Page404 from "./common_pages/Page404";
+import ProductOverview from "./common_pages/ProductOverview";
 import Register from "./common_pages/Register";
 import PrimaryNavbar from "./components/PrimaryNavbar";
 
@@ -40,6 +41,7 @@ function App() {
                         <Route path="/login" element={<Login />} />
                         <Route path="/register" element={<Register />} />
                         <Route path="*" element={<Page404 />} />
+                        <Route path="/product-overview" element={<ProductOverview />} />
                     </Routes>
                 </div>
             </BrowserRouter>
