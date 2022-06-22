@@ -63,7 +63,7 @@ const ProductOverview = () => {
     const [selectedSize, setSelectedSize] = useState(product.sizes[2]);
 
     return (
-        <div className="container mx-auto">
+        <div className="container mx-auto mt-12">
             <div className="pt-6">
                 <nav aria-label="Breadcrumb">
                     <ol
