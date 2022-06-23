@@ -1,5 +1,4 @@
 import React from "react";
-import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Link } from "react-router-dom";
 
 const products = [
@@ -90,7 +89,7 @@ const Home = () => {
         <div className="container mx-auto mt-12">
             <header className="shadow">
                 <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-bold text-gray-900 dark:text-primary dark:text-white">
+                    <h1 className="text-3xl font-bold text-gray-900 dark:text-primar">
                         Dashboard
                     </h1>
                 </div>
@@ -121,7 +120,7 @@ const Home = () => {
                                         </div>
                                         <div className="mt-4 flex justify-between">
                                             <div className="mx-2 mb-4">
-                                                <h3 className="text-sm text-gray-900 font-bold text-lg dark:text-white">
+                                                <h3 className="text-gray-900 font-bold text-lg dark:text-white">
                                                     <span
                                                         aria-hidden="true"
                                                         className="absolute inset-0"
@@ -132,7 +131,7 @@ const Home = () => {
                                                     {product.color}
                                                 </p>
                                             </div>
-                                            <p className="text-sm pb-2 font-medium text-lg text-primary text-gray-900 dark:text-white">
+                                            <p className=" pb-2 font-medium text-lg text-primary dark:text-white">
                                                 {product.price}
                                             </p>
                                         </div>
