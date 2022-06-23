@@ -100,8 +100,9 @@ export default function Example() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-auto sm:pr-0">
-                                <div className=" flex dark:bg-black p-3 mx-2 rounded-full text-black dark:text-white hover:text-primary ">
+                            {/* xs:top-32 sm:top-32 md:top-32  */}
+                            <div className="absolute inset-y-0 top-24 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-auto sm:pr-0">
+                                <div className=" flex dark:bg-black p-1 mx-2 rounded-full text-black dark:text-white hover:text-primary ">
                                     <span className="sr-only">View cart</span>
 
                                     <AiOutlineSearch
@@ -118,7 +119,7 @@ export default function Example() {
                                 </div>
                                 <button
                                     type="button"
-                                    className="bg-gray-300 dark:bg-black p-3 mx-2 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className="bg-gray-300 dark:bg-black p-3 mx-1 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
                                     <span className="sr-only">View cart</span>
                                     <AiOutlineShoppingCart
@@ -128,14 +129,14 @@ export default function Example() {
                                 </button>
                                 <button
                                     type="button"
-                                    className="bg-gray-300 dark:bg-black p-3 mx-2 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className="bg-gray-300 dark:bg-black p-3 mx-1 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
                                     <AiOutlineBell className="h-6 w-6" />
                                 </button>
 
                                 <button
                                     type="button"
-                                    className="bg-gray-300 dark:bg-black p-3 mx-2 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className="bg-gray-300 dark:bg-black p-3 mx-1 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
                                     <ThemeToggle className="h-6 w-6" />
                                 </button>
