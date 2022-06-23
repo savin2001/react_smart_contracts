@@ -8,32 +8,32 @@ import Register from "./common_pages/Register";
 import PrimaryNavbar from "./components/PrimaryNavbar";
 
 function App() {
-    const [data, setData] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [hasError, setHasError] = useState(false);
+    // const [data, setData] = useState([]);
+    // const [isLoading, setIsLoading] = useState(false);
+    // const [hasError, setHasError] = useState(false);
 
-    useEffect(() => {
-        const fetchData = async () => {
-            setIsLoading(true);
-            setHasError(false);
-            try {
-                const res = await fetch(
-                    "https://hn.algolia.com/api/v1/search?query=react"
-                );
-                const json = await res.json();
-                setData(json.hits);
-            } catch (error) {
-                setHasError(true);
-            }
-            setIsLoading(false);
-        };
-        fetchData();
-    }, [setData]);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         setIsLoading(true);
+    //         setHasError(false);
+    //         try {
+    //             const res = await fetch(
+    //                 "https://hn.algolia.com/api/v1/search?query=react"
+    //             );
+    //             const json = await res.json();
+    //             setData(json.hits);
+    //         } catch (error) {
+    //             setHasError(true);
+    //         }
+    //         setIsLoading(false);
+    //     };
+    //     fetchData();
+    // }, [setData]);
 
     return (
         <div className="App">
             <BrowserRouter>
-                <div className="dark:bg-gray-900 min-h-screen">
+                <div className="dark:bg-black min-h-screen">
                     <PrimaryNavbar />
                     <Routes>
                         <Route path="/" element={<Home />} />

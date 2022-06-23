@@ -6,15 +6,18 @@ import {
     AiOutlineShoppingCart,
     AiOutlineMenu,
     AiOutlineClose,
-    AiOutlineHeart,
+    AiOutlineBell,
     AiOutlineSearch,
 } from "react-icons/ai";
 
 import ThemeToggle from "./ThemeToggle";
 
 const navigation = [
-    { name: "Sign up", href: "/register", current: true },
-    { name: "Sign in", href: "/login", current: false },
+    { name: "Products", href: "/", current: true },
+    { name: "Features", href: "/smart-contracts", current: false },
+    { name: "Company", href: "/about", current: false },
+    { name: "FAQs", href: "/help", current: false },
+    { name: "Contact us", href: "/help", current: false },
 ];
 
 function classNames(...classes) {
@@ -23,14 +26,17 @@ function classNames(...classes) {
 
 export default function Example() {
     return (
-        <Disclosure as="nav" className="bg-gray-300 dark:bg-gray-900 fixed top-0 left-0 z-30 w-full">
+        <Disclosure
+            as="nav"
+            className="bg-white dark:bg-primary fixed top-0 left-0 z-30 w-full shadow-md py-1"
+        >
             {({ open }) => (
                 <>
                     <div className="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
                         <div className="relative flex items-center justify-between h-16">
                             <div className="absolute inset-y-0 left-0 flex items-center sm:hidden">
                                 {/* Mobile menu button*/}
-                                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-black dark:text-white hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                                <Disclosure.Button className="inline-flex items-center justify-center p-2 rounded-md text-black dark:text-white hover:text-white hover:bg-primary focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                                     <span className="sr-only">
                                         Open main menu
                                     </span>
@@ -47,16 +53,26 @@ export default function Example() {
                                     )}
                                 </Disclosure.Button>
                             </div>
-                            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
+                            <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start xs:opacity-0 sm:opacity-0 md:opacity-100 ">
                                 <div className="flex-shrink-0 flex items-center">
-                                    <Link to="/">
+                                    <Link
+                                        to="/"
+                                        className="flex  h-8 w-auto pr-4 hover:opacity-60 duration-100"
+                                    >
                                         <img
-                                            className="block lg:hidden h-8 w-auto"
-                                            src="https://avatars.dicebear.com/api/identicon/savin.svg"
-                                            alt="Workflow"
+                                            src="https://avatars.dicebear.com/api/identicon/your-custd.svg"
+                                            alt="Logo"
                                         />
-                                        <h2 className="text-black dark:text-white">
-                                            Iko Legit
+                                    </Link>
+                                    <Link
+                                        to="/"
+                                        className="hover:text-primary dark:hover:opacity-60 duration-100"
+                                    >
+                                        <h2 className="text-black flex dark:text-white text-2xl font-bold">
+                                            <span>Iko</span>
+                                            <span className="text-primary dark:text-black">
+                                                Legit
+                                            </span>
                                         </h2>
                                     </Link>
                                 </div>
@@ -68,9 +84,9 @@ export default function Example() {
                                                 to={item.href}
                                                 className={classNames(
                                                     item.current
-                                                        ? "bg-gray-900 text-white dark:text-white"
-                                                        : "text-black dark:text-white hover:bg-gray-700 hover:text-white",
-                                                    "px-3 py-2 rounded-md text-sm font-medium"
+                                                        ? "bg-primary border dark:border-white  text-white dark:text-white"
+                                                        : "text-black dark:text-white hover:text-primary",
+                                                    "px-3 py-2 rounded-xl text-sm font-medium"
                                                 )}
                                                 aria-current={
                                                     item.current
@@ -84,20 +100,25 @@ export default function Example() {
                                     </div>
                                 </div>
                             </div>
-                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
-                                <div className="bg-gray-300 flex dark:bg-gray-900 p-1 mx-2 rounded-full text-black dark:text-white hover:text-white ">
+                            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-auto sm:pr-0">
+                                <div className=" flex dark:bg-black p-3 mx-2 rounded-full text-black dark:text-white hover:text-primary ">
                                     <span className="sr-only">View cart</span>
+
+                                    <AiOutlineSearch
+                                        className="h-6 w-6 absolute top-5 ml-2"
+                                        aria-hidden="true"
+                                    />
                                     <input
                                         type="search"
                                         id="default-search"
-                                        className="block p-2 pl-10 w-full text-sm text-gray-900 bg-gray-50 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-white-500"
+                                        className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-200 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-white-500"
                                         placeholder="I'm looking for..."
                                         required=""
                                     />
                                 </div>
                                 <button
                                     type="button"
-                                    className="bg-gray-300 dark:bg-gray-900 p-1 mx-2 rounded-full text-black dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className="bg-gray-300 dark:bg-black p-3 mx-2 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
                                     <span className="sr-only">View cart</span>
                                     <AiOutlineShoppingCart
@@ -107,13 +128,14 @@ export default function Example() {
                                 </button>
                                 <button
                                     type="button"
-                                    className="bg-gray-300 dark:bg-gray-900 p-1 mx-2 rounded-full text-black dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className="bg-gray-300 dark:bg-black p-3 mx-2 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
-                                    <AiOutlineHeart className="h-6 w-6" />
+                                    <AiOutlineBell className="h-6 w-6" />
                                 </button>
+
                                 <button
                                     type="button"
-                                    className="bg-gray-300 dark:bg-gray-900 p-1 mx-2 rounded-full text-black dark:text-white hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+                                    className="bg-gray-300 dark:bg-black p-3 mx-2 rounded-full text-black dark:text-white hover:text-primary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
                                 >
                                     <ThemeToggle className="h-6 w-6" />
                                 </button>
@@ -143,23 +165,23 @@ export default function Example() {
                                         <Menu.Items className="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg py-1 bg-white text-white dark:bg-gray-700 dark:text-white ring-1 ring-black ring-opacity-5 focus:outline-none">
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="#"
-                                                        className={classNames(
-                                                            active
-                                                                ? "bg-gray-100"
-                                                                : "",
-                                                            "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
-                                                        )}
-                                                    >
-                                                        Your Profile
-                                                    </a>
+                                                    <Link
+                                                    to="/login"
+                                                    className={classNames(
+                                                        active
+                                                            ? "bg-gray-100"
+                                                            : "",
+                                                        "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
+                                                    )}
+                                                >
+                                                    Sign in
+                                                </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="#"
+                                                    <Link
+                                                        to="/register"
                                                         className={classNames(
                                                             active
                                                                 ? "bg-gray-100"
@@ -167,14 +189,14 @@ export default function Example() {
                                                             "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
                                                         )}
                                                     >
-                                                        Settings
-                                                    </a>
+                                                        Sign up
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                             <Menu.Item>
                                                 {({ active }) => (
-                                                    <a
-                                                        href="#"
+                                                    <Link
+                                                        to="/login"
                                                         className={classNames(
                                                             active
                                                                 ? "bg-gray-100"
@@ -182,8 +204,8 @@ export default function Example() {
                                                             "block px-4 py-2 text-sm text-gray-700 dark:text-gray-300"
                                                         )}
                                                     >
-                                                        Sign out
-                                                    </a>
+                                                        Login
+                                                    </Link>
                                                 )}
                                             </Menu.Item>
                                         </Menu.Items>
