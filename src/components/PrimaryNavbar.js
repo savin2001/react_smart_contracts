@@ -13,11 +13,11 @@ import {
 import ThemeToggle from "./ThemeToggle";
 
 const navigation = [
-    { name: "Products", href: "/", current: true },
+    { name: "Products", href: "/product-overview", current: true },
     { name: "Features", href: "/smart-contracts", current: false },
     { name: "Company", href: "/about", current: false },
     { name: "FAQs", href: "/help", current: false },
-    { name: "Contact us", href: "/help", current: false },
+    { name: "Contacts", href: "/contact", current: false },
 ];
 
 function classNames(...classes) {
@@ -62,6 +62,7 @@ export default function Example() {
                                         <img
                                             src="https://avatars.dicebear.com/api/identicon/your-custd.svg"
                                             alt="Logo"
+                                            className="bg-white"
                                         />
                                     </Link>
                                     <Link
@@ -101,8 +102,8 @@ export default function Example() {
                                 </div>
                             </div>
                             {/* xs:top-32 sm:top-32 md:top-32  */}
-                            <div className="absolute inset-y-0 top-24 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-auto sm:pr-0">
-                                <div className=" flex dark:bg-black p-1 mx-2 rounded-full text-black dark:text-white hover:text-primary ">
+                            <div className="absolute inset-y-0   right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-auto sm:pr-0">
+                                <div className=" flex dark:bg-black dark:bg-white mx-2 rounded-full text-black dark:text-white hover:text-primary ">
                                     <span className="sr-only">View cart</span>
 
                                     <AiOutlineSearch
@@ -112,7 +113,7 @@ export default function Example() {
                                     <input
                                         type="search"
                                         id="default-search"
-                                        className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-200 rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-white-500"
+                                        className="block p-3 pl-10 w-full text-sm text-gray-900 bg-gray-200 dark:bg-white rounded-full border border-gray-300 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-white-500"
                                         placeholder="I'm looking for..."
                                         required=""
                                     />

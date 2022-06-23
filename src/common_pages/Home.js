@@ -43,7 +43,7 @@ const products = [
         color: "Black",
     },
     {
-        id: 1,
+        id: 5,
         name: "Basic Tee",
         href: "#",
         imageSrc:
@@ -53,7 +53,7 @@ const products = [
         color: "Black",
     },
     {
-        id: 2,
+        id: 6,
         name: "Basic Tee",
         href: "#",
         imageSrc:
@@ -63,7 +63,7 @@ const products = [
         color: "Black",
     },
     {
-        id: 3,
+        id: 7,
         name: "Basic Tee",
         href: "#",
         imageSrc:
@@ -73,7 +73,7 @@ const products = [
         color: "Black",
     },
     {
-        id: 4,
+        id: 8,
         name: "Basic Tee",
         href: "#",
         imageSrc:
@@ -87,52 +87,57 @@ const products = [
 const Home = () => {
     return (
         <div className="container mx-auto mt-12">
-            <div className="sm:text-center lg:text-left">
-              <h1 className="text-4xl tracking-tight font-extrabold text-gray-900 sm:text-5xl md:text-6xl">
-                <span className="block xl:inline">Data to enrich your</span>{' '}
-                <span className="block text-indigo-600 xl:inline">online business</span>
-              </h1>
-              <p className="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
-                Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet
-                fugiat veniam occaecat fugiat aliqua.
-              </p>
-              <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-                <div className="rounded-md shadow">
-                  <Link
-                    to="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 md:py-4 md:text-lg md:px-10"
-                  >
-                    Get started
-                  </Link>
-                </div>
-                <div className="mt-3 sm:mt-0 sm:ml-3">
-                  <Link
-                    href="#"
-                    className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-indigo-700 bg-indigo-100 hover:bg-indigo-200 md:py-4 md:text-lg md:px-10"
-                  >
-                    Live demo
-                  </Link>
-                </div>
-              </div>
-            </div>
-            <header className="shadow">
-                <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    <h1 className="text-3xl font-bold text-gray-900 dark:text-primar">
-                        Dashboard
+            <header
+                id="landing-page"
+                className="dark:bg-black bg-fixed max-w-xl  pt-32 h-screen"
+            >
+                <div className="sm:text-center lg:text-left pr-6">
+                    <h1 className="text-4xl text-left tracking-tight font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+                        <span className="block xl:inline">Empowering</span>{" "}
+                        <span className="block text-primary xl:inline">
+                            safe and secure
+                        </span>{" "}
+                        <span className="block xl:inline">Ecommerce</span>
                     </h1>
+                    <p className="mt-3 m-4 text-base text-gray-500 dark:text-white sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                        There has been a surge in fraudulent transactions,
+                        especially in cross-border and online trading due to
+                        poor enforcement laws and the anonymity of the
+                        transacting parties. This is a concern that can be
+                        mitigated will the implementation of smart contracts.
+                    </p>
+                    <div className="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+                        <div className="rounded-md shadow">
+                            <Link
+                                to="/home"
+                                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-2xl text-white bg-primary hover:opacity-70 md:py-4 md:text-lg md:px-10"
+                            >
+                                Get started
+                            </Link>
+                        </div>
+                        <div className="mt-3 sm:mt-0 sm:ml-3">
+                            <Link
+                                to="/home"
+                                className="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-2xl text-primary bg-indigo-100 hover:opacity-70 md:py-4 md:text-lg md:px-10"
+                            >
+                                Live demo
+                            </Link>
+                        </div>
+                    </div>
+                </div>
+                <div className="lg:absolute right-0 lg:inset-y-0 lg:right-0 lg:w-1/2 max-w-full bg-white dark:bg-black ">
+                    <img
+                        className="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full"
+                        src="https://images.unsplash.com/photo-1648120637796-9bed5eb881fc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
+                        alt=""
+                    />
                 </div>
             </header>
             <main>
-                <div className="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
-                    <div className="px-4 py-6 sm:px-0">
-                        <div className="border-4 border-dashed border-gray-200 rounded-lg h-96" />
-                    </div>
-                </div>
-
-                <div className="">
+                <div className="bg-white dark:bg-black shadow-lg">
                     <div className="max-w-2xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:max-w-7xl lg:px-8">
                         <h2 className="text-2xl font-extrabold tracking-tight text-gray-900 dark:text-primary">
-                            Customers also purchased
+                            Our popular products
                         </h2>
 
                         <div className="mt-6 grid grid-cols-1 gap-y-10 gap-x-6 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
